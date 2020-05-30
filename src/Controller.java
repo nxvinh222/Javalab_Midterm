@@ -1,3 +1,6 @@
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.PathTransition;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.util.Stack;
@@ -11,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,6 +25,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Path;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -148,9 +154,6 @@ public class Controller {
                 if(stack.size() > 0){
 
                     tp.getChildren().remove(tp.getChildren().size()-1);
-
-
-
                     stack.pop();
                     size.setText("Size:"+stack.size());
 
@@ -165,7 +168,7 @@ public class Controller {
 
         Scene sceneStack = new Scene(root,600,600, Color.STEELBLUE);
 //        root.setId("root");
-//        sceneStack.getStylesheets().add("styles.css");
+        sceneStack.getStylesheets().add("styles.css");
 
 //        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Stage window = new Stage();
@@ -262,7 +265,6 @@ public class Controller {
                     translate.setNode(names);
                     translate.play();
 
-
                     tp.getChildren().addAll(names);
 
                     queue.add(d);
@@ -286,10 +288,8 @@ public class Controller {
                 if(queue.size() > 0){
 
                     tp.getChildren().remove(0);
-
-
                     queue.remove();
-//                    stack.pop();
+
                     size.setText("Size:"+queue.size());
 
                 }else{
@@ -303,12 +303,15 @@ public class Controller {
 
         Scene sceneQueue = new Scene(root,600,600, Color.STEELBLUE);
 //        root.setId("root");
-//        sceneStack.getStylesheets().add("styles.css");
+        sceneQueue.getStylesheets().add("styles.css");
 
 //        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Stage window = new Stage();
         window.setScene(sceneQueue);
         window.show();
     }
+    // HashTable
+    public void changeHashScreen(ActionEvent event) throws IOException {
 
+    }
 }

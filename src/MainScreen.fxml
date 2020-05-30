@@ -7,6 +7,6 @@
     <children>
         <Button layoutX="262.0" layoutY="89.0" mnemonicParsing="false" onAction="#changeStackScreen" text="Stack" />
         <Button layoutX="262.0" layoutY="151.0" mnemonicParsing="false" onAction="#changeQueueScreen" text="Queue" />
-        <Button layoutX="262.0" layoutY="225.0" mnemonicParsing="false" styleClass="button1" text="Button" />
+        <Button layoutX="262.0" layoutY="225.0" mnemonicParsing="false" onAction="#changeHashScreen" styleClass="button1" text="HashTable" />
     </children>
 </AnchorPane>
